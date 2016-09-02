@@ -7,5 +7,5 @@ angular.module("home", [])
         })
     }])
     .controller("homeCtrl", ["$scope", function ($scope) {
-        this.test = 2;
+        this.test = 1;
     }]);

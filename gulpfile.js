@@ -38,9 +38,9 @@
         },
         src: {
             index: 'src/index.jade',
-            style: ['src/style/build.scss', 'src/js/modules/**/*.scss'],
+            style: ['src/build.scss'],
             vendor: 'src/js/vendor.js',
-            js: 'src/js/build.js',
+            js: 'src/build.js',
             img: 'src/img/**/*.*',
             fonts: 'src/fonts/**/*.*',
             templates: ['src/js/modules/**/*.jade'] //'src/js/modules/**/*.jade'
