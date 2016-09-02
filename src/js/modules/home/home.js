@@ -1,4 +1,4 @@
-angular.module("home", [])
+angular.module("app.home", [])
     .config(["$stateProvider", function ($stateProvider) {
         $stateProvider.state("home", {
             url: "/home",

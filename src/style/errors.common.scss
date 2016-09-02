@@ -1,0 +1,117 @@
+$top-menu-height: 44px;
+$left-panel-width: 200px;
+
+body {
+    background: $color-snow;
+}
+
+.main-menu {
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    height: $top-menu-height;
+    background: $color-black;
+    @include clearfix;
+}
+
+.main-menu__item {
+    float: left;
+    height: $top-menu-height;
+    line-height: $top-menu-height;
+    color: #fff;
+    padding: 0 2*$step;
+    cursor: pointer;
+
+    &:hover {
+        background: $color-steel;
+    }
+}
+
+.main-left-panel {
+    position: fixed;
+    top: $top-menu-height;
+    left: 0;
+    bottom: 0;
+    width: $left-panel-width;
+    background: $color-slate;
+}
+
+.main-left-panel__item {
+    height: $top-menu-height;
+    line-height: $top-menu-height;
+    color: #fff;
+    padding: 0 2*$step;
+    cursor: pointer;
+
+    &.main-left-panel__item-active {
+        border-left: 2px solid $color-default;
+    }
+}
+
+.main-content {
+    margin: $top-menu-height 0 0 $left-panel-width;
+    padding: 5*$step;
+}
+
+.error-tabs {
+    margin-top: 2*$step;
+    @include clearfix;
+}
+
+.error-tabs__item {
+    float: left;
+    height: 4*$step;
+    line-height: 4*$step;
+    background: $color-dark-snow;
+    padding: 0 2*$step;
+    width: 200px;
+    text-align: center;
+    border-top: 1px solid $color-dark-smoke;
+    border-right: 1px solid $color-dark-smoke;
+    margin-top: 2px;
+    box-sizing: content-box;
+}
+
+.error-tabs__item-active {
+    border-top: 3px solid $color-default;
+    margin-top: 0;
+    background: #fff;
+}
+
+.error-tabs__item:first-child {
+    border-left: 1px solid $color-dark-smoke;
+}
+
+.error-list__wrap {
+    background: #fff;
+    min-height: 200px;
+    border: 1px solid $color-dark-smoke;
+    border-top: 0;
+    padding: 2*$step;
+}
+
+.error-list {
+//    @extend .table;
+}
+
+.error-list__item {
+    @include clearfix;
+}
+
+.error-list__cell {
+//    @extend .t-cell;
+//    float: right;
+//    margin-left: 2*$step;
+}
+
+.error-list__item-name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+//    overflow: hidden;
+//    float: left;
+}
+
+.error-list__item-last-seen {
+    white-space: nowrap;
+}
