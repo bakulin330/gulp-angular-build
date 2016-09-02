@@ -1,0 +1,113 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin border-top-left-radius($radius) {
+    -webkit-border-top-left-radius: $radius;
+    -moz-border-radius-topleft: $radius;
+    border-top-left-radius: $radius;
+}
+
+@mixin border-left-radius($radius) {
+    -webkit-border-top-left-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    -moz-border-radius-topleft: $radius;
+    -moz-border-radius-bottomleft: $radius;
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+
+@mixin border-top-radius($radius) {
+    -webkit-border-top-left-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    -moz-border-radius-topleft: $radius;
+    -moz-border-radius-topright: $radius;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius) {
+    -webkit-border-bottom-left-radius: $radius;
+    -webkit-border-bottom-right-radius: $radius;
+    -moz-border-radius-bottomleft: $radius;
+    -moz-border-radius-bottomright: $radius;
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+//--------------
+
+@mixin box-shadow($val...) {
+    -webkit-box-shadow: $val;
+    -moz-box-shadow: $val;
+    box-shadow: $val;
+}
+
+@mixin transition($transition) {
+    -webkit-transition: #{$transition};
+    -moz-transition: #{$transition};
+    -ms-transition: #{$transition};
+    -o-transition: #{$transition};
+    transition: #{$transition};
+}
+
+@mixin transform($method) {
+    -webkit-transform: $method;
+    -moz-transform: $method;
+    -ms-transform: $method;
+    -o-transform: $method;
+    transform: $method;
+}
+
+@mixin no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    //cursor: default;
+}
+
+@mixin opacity($opacity) {
+    $opacity_ie: ($opacity * 100);
+    filter: alpha(opacity=$opacity_ie); /* IE 5-7 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity_ie})"; /* IE 8 */
+    -moz-opacity: $opacity;
+    -khtml-opacity: $opacity;
+    opacity: $opacity;
+}
+
+//---------------
+
+@mixin gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+    background-color: $start-color; /* Old browsers */
+    background-image: -moz-linear-gradient(top, $start-color $start-percent, $end-color $end-percent); /* FF3.6-15 */
+    background-image: -o-linear-gradient(top, $start-color $start-percent, $end-color $end-percent); // Opera 12
+    background-image: -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent); /* Chrome10-25,Safari5.1-6 */
+    background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+    background-repeat: repeat-x;
+}
+
+@mixin gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+    background-color: $start-color; /* Old browsers */
+    background-image: -moz-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); /* FF3.6-15 */
+    background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
+    background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); /* Chrome10-25,Safari5.1-6 */
+    background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+    background-repeat: repeat-y;
+}
+
+@mixin angle-up($sides, $main, $color) {
+    width: 0;
+    height: 0;
+    border-left: $sides solid transparent;
+    border-right: $sides solid transparent;
+    border-top: 0;
+    border-bottom: $main solid $color;
+}

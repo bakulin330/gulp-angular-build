@@ -1,0 +1,22 @@
+doctype
+html(lang="en", ng-app="app")
+    head
+        title Example
+        meta(name="language" content="ru")
+        meta(name="robots" content="noindex,nofollow")
+        meta(http-equiv="Content-Type" content="text/html;charset=UTF-8")
+        link(href="a.css" rel="stylesheet")
+        script(type="text/javascript") function _err(e,i){console&&console.error(e.stack);}
+        script(src="v.js" type="text/javascript")
+        script(src="b.js" type="text/javascript")
+    body(ng-controller="AppCtrl as main")
+        div#nocss(style="margin:75px 0;text-align:center;")
+            h1 Your browser was unable to load all of App's resources.
+            | They may have been blocked by your firewall, proxy or browser configuration.#[hr]
+            | Press Ctrl+F5 or Ctrl+Shift+R to have your browser try again #[br]
+            | and if that doesn't work, check out our #[a(href="http://help.trello.com/article/771-loading-resources-from-trellos-cdn") troubleshooting guide].
+
+        noscript#nojs
+            h1 To use App, please enable JavaScript.
+
+        div(ui-view)

@@ -1,0 +1,34 @@
+// brand colors
+$color-blue: #1FB6FF;
+$color-blue-light: #85D7FF;
+$color-blue-dark: #009EEB;
+
+// grey colors
+$color-black: #1F2D3D;
+$color-steel: #273444;
+$color-slate: #3C4858;
+$color-silver: #8492A6;
+
+$color-smoke: #E0E6ED;
+$color-dark-smoke: #D3DCE6;
+$color-extra-dark-smoke: #C0CCDA;
+
+$color-snow: #F9FAFC;
+$color-dark-snow: #EFF2F7;
+$color-extra-dark-snow: #E5E9F2;
+
+// UI colors
+$color-default: #1FB6FF;
+$color-positive: #13CE66;
+$color-negative: #FF4949;
+$color-warning: #FFC82C;
+
+// -------------------
+
+.color-silver {
+    color: $color-silver;
+}
+
+.border-color-silver {
+    border: 1px solid $color-silver;
+}

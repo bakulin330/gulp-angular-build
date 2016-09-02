@@ -1,0 +1,43 @@
+a {
+    background-color: transparent;
+    transition: all .15s linear;
+    cursor: pointer;
+    color: $color-blue;
+    outline: none;
+
+    &:visited {
+        color: $color-blue;
+    }
+}
+
+.link-dark {
+    color: $color-slate;
+}
+
+.link-light {
+    color: $color-silver;
+}
+
+.link-negative {
+    color: $color-silver
+}
+
+@media screen and (min-width: 768px) {
+    a {
+        &:hover {
+            color: $color-blue-dark;
+        }
+    }
+
+    .link-dark:hover {
+        color: $color-black;
+    }
+
+    .link-light:hover {
+        color: $color-black;
+    }
+
+    .link-negative:hover {
+        color: $color-negative;
+    }
+}

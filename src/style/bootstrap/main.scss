@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+#nocss {
+    display: none;
+}
+
+#nojs {
+    display: block;
+    margin: 75px auto;
+    text-align: center;
+    max-width: 600px;
+    font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+}
+
+.mt1 {
+    margin-top: $step;
+}
+
+.mt2 {
+    margin-top: 2*$step;
+}
+
+.mt3 {
+    margin-top: 3*$step;
+}

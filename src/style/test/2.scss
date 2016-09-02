@@ -1,0 +1,32 @@
+.card {
+    padding: $step;
+    @include border-radius($base-border-radius);
+    display: inline-block;
+}
+.card_blue {
+    background: $color-blue;
+}
+
+.font-card {
+    padding: 2*$step;
+    border: 1px solid $color-dark-smoke;
+    border-bottom: none;
+}
+
+.font-card:first-child {
+    @include border-top-radius($base-border-radius);
+}
+
+.font-card:last-child {
+    @include border-bottom-radius($base-border-radius);
+    border-bottom: 1px solid $color-dark-smoke;
+}
+
+#tbl-btns {
+    border: 1px solid $color-dark-smoke;
+    @include border-radius($base-border-radius);
+}
+
+#tbl-btns .t-cell {
+    padding: 2*$step;
+}

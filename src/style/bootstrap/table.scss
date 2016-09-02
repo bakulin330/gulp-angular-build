@@ -1,0 +1,22 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.table {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.t-row {
+    display: table-row;
+}
+
+.t-cell {
+    display: table-cell;
+}
+
+.table_cell-center .t-cell {
+    text-align: center;
+}

@@ -1,0 +1,98 @@
+$base-button-height: 4*$step;
+$base-button-padding: 2*$step;
+$btn-box-shadow: #e0e6ed 0px 0px 0px 1px inset;
+
+button::-moz-focus-inner, input[type=submit]::-moz-focus-inner, input[type=button]::-moz-focus-inner {
+    padding: 0;
+    border: 0 none;
+}
+
+.base-button {
+    color: #fff;
+    border: 0;
+    @include border-radius($base-border-radius);
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    transition: all 80ms linear;
+    -webkit-font-smoothing: antialiased;
+    @include no-select;
+    white-space: nowrap;
+    text-decoration: none !important;
+    min-width: 40px;
+    font-family: $base-font-family;
+
+    &:hover {
+        box-shadow: inset 0 -2px 0 rgba(31,45,61,0.3);
+    }
+
+    &:active {
+        box-shadow: inset 0 2px 0 rgba(31,45,61,0.3);
+    }
+}
+
+// -------------
+
+.btn-m {
+    @extend .base-button;
+    font-size: $font-m;
+    height: $base-button-height;
+    line-height: $base-button-height;
+    padding: 0 $base-button-padding;
+}
+
+.btn-s {
+    @extend .base-button;
+    font-size: $font-s;
+    height: round($base-button-height * 0.75);
+    line-height: round($base-button-height * 0.75);
+    padding: 0 ($base-button-padding * 0.75);
+}
+
+.btn-l {
+    @extend .base-button;
+    font-size: $font-l;
+    height: round($base-button-height * 1.25);
+    line-height: round($base-button-height * 1.25);
+    padding: 0 ($base-button-padding * 1.25);
+}
+
+.btn-xl {
+    @extend .base-button;
+    font-size: $font-xl;
+    height: round($base-button-height * 1.5);
+    line-height: round($base-button-height * 1.5);
+    padding: 0 ($base-button-padding * 1.5);
+}
+
+// -------------
+
+.btn-ghost {
+    color: $color-slate;
+    background: transparent;
+    @include box-shadow($btn-box-shadow);
+
+    &:hover {
+        color: #fff;
+    }
+
+    &:visited {
+        background: transparent;
+    }
+}
+
+.btn-outlined {
+    color: $color-slate;
+    @include box-shadow($btn-box-shadow);
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+.btn-disabled {
+    cursor: default;
+    background: $color-snow !important;
+    color: $color-silver;
+    @include box-shadow($btn-box-shadow !important);
+}

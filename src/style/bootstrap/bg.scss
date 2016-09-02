@@ -1,0 +1,27 @@
+.bg-none {
+    background: none;
+}
+
+.bg-white {
+    background: #fff;
+}
+
+.bg-default, .bg-default-hover:hover {
+    background: $color-default;
+}
+
+.bg-positive, .bg-positive-hover:hover {
+    background: $color-positive;
+}
+
+.bg-negative, .bg-negative-hover:hover {
+    background: $color-negative;
+}
+
+.bg-snow {
+    background: $color-snow;
+}
+
+.bg-smoke {
+    background: $color-smoke;
+}

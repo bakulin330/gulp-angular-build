@@ -1,0 +1,38 @@
+{
+    "name": "LPMotorFE",
+    "version": "0.2.1",
+    "description": "LPMotor FrontEnd",
+    "license": "ISC",
+    "dependencies": {
+        "gulp": "^3.9.1",
+        "gulp-angular-templatecache": "*",
+        "gulp-autoprefixer": "3.1.1",
+        "gulp-concat": "^2.6.0",
+        "gulp-concat-css": "*",
+        "gulp-lpm-scss-str2base64": "*",
+        "gulp-csso": "2.0.0",
+        "gulp-htmlmin": "2.0.0",
+        "gulp-imagemin": "3.0.3",
+        "imagemin-pngquant": "5.0.0",
+        "gulp-jade": "1.1.0",
+        "gulp-jsonminify": "1.0.0",
+        "gulp-lpmotor-jswrap": "^0.1.2",
+        "gulp-ng-annotate": "2.0.0",
+        "gulp-rename": "*",
+        "gulp-sass": "2.3.2",
+        "gulp-sourcemaps": "*",
+        "gulp-wrap": "0.13.0",
+        "gulp-notify": "*",
+        "gulp-util": "*",
+        "gulp-uglify": "*",
+        "gulp-rigger": "^0.5.8",
+        "gulp-debug": "2.1.2",
+        "rimraf": "^2.5.4",
+        "merge-stream": "*",
+        "merge2": "1.0.2"
+    },
+    "devDependencies": {
+        "browser-sync": "2.14.0",
+        "protractor": "^3.2.1"
+    }
+}

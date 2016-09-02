@@ -1,0 +1,43 @@
+$base-font-size: 16px;
+$base-font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+$base-line-height: 1.5;
+$font-m: $base-font-size;
+
+// --------------
+$font-xxl: round($base-font-size * 1.8);
+$font-xl: round($base-font-size * 1.5);
+$font-l: round($base-font-size * 1.22);
+$font-s: round($base-font-size * 0.78);
+$font-xs: round($base-font-size * 0.56);
+// --------------
+
+body {
+    font-size: $base-font-size;
+    font-family: $base-font-family;
+    line-height: $base-line-height;
+    cursor: default;
+}
+
+.font-xxl {
+    font-size: $font-xxl;
+}
+
+.font-xl {
+    font-size: $font-xl;
+}
+
+.font-l {
+    font-size: $font-l;
+}
+
+.font-m {
+    font-size: $font-m;
+}
+
+.font-s {
+    font-size: $font-s;
+}
+
+.font-xs {
+    font-size: $font-xs;
+}
