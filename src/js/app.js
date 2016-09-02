@@ -7,7 +7,7 @@ angular.module("app", [
 ]);
 
 angular.module("app").config(["$httpProvider", "$urlRouterProvider", function ($httpProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("/errors/list");
 }]);
 
 angular.module("app").run(["$state", "$http", "$urlRouter", "$rootScope", function ($state, $http, $urlRouter, $rootScope) {

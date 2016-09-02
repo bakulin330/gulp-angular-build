@@ -194,6 +194,7 @@ $error-tab-counter-height: 2*$step;
 }
 
 .error-list__item {
+    vertical-align: middle;
     &:hover {
         background: rgba(250, 242, 204, 0.6);
     }
