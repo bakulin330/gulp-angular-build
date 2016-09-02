@@ -1,7 +1,7 @@
 angular.module("app", [
     "ui.router",
     "services.httpRequestTracker",
-    "templates.app",
+    //"templates.app", - нужно для шаблонов, которые компилируются прямо в JS
     "home"
 ]);
 

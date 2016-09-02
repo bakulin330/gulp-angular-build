@@ -33,21 +33,21 @@
         build: {
             base: 'build/',
             img: 'build/img/',
-            fonts: 'build/fonts/'
+            fonts: 'build/fonts/',
+            templates: 'build/modules/'
         },
         src: {
-            html: 'src/**/*.html',
             index: 'src/index.jade',
-            style: 'src/style/build.scss',
+            style: ['src/style/build.scss', 'src/js/modules/**/*.scss'],
             vendor: 'src/js/vendor.js',
             js: 'src/js/build.js',
             img: 'src/img/**/*.*',
             fonts: 'src/fonts/**/*.*',
-            templates: 'src/js/modules/**/*.jade'
+            templates: ['src/js/modules/**/*.jade'] //'src/js/modules/**/*.jade'
         },
         watch: {
             js: ['src/js/**/*.js', '!src/js/vendor.js'],
-            style: 'src/style/**/*.scss'
+            style: ['src/style/**/*.scss', 'src/js/modules/**/*.scss']
         },
         clean: './build'
     };
@@ -71,6 +71,7 @@
     gulp.task('build', [
         'build:index',
         'build:vendor',
+        'build:templates',
         'build:js',
         'build:style',
         'build:image',
@@ -78,13 +79,13 @@
     ]);
 
     gulp.task('watch', function () {
-        gulp.watch(path.src.jade, ['build:jade']);
-        gulp.watch(path.src.templates, ['build:js']);
-        gulp.watch(path.watch.js, ['build:js']);
-        gulp.watch(path.src.vendor, ['build:vendor']);
+        gulp.watch(path.src.index, ['build:index']);
         gulp.watch(path.watch.style, ['build:style']);
+        gulp.watch(path.src.vendor, ['build:vendor']);
+        gulp.watch(path.watch.js, ['build:js']);
         gulp.watch(path.src.img, ['build:image']);
         gulp.watch(path.src.fonts, ['build:fonts']);
+        gulp.watch(path.src.templates, ['build:templates']);
     });
 
     gulp.task('build:index', function () {
@@ -104,6 +105,13 @@
             .pipe(reload({stream: true}));
     });
 
+    gulp.task('build:templates', function () {
+        return gulp.src(path.src.templates)
+            .pipe(jade())
+            .pipe(gulp.dest(path.build.templates))
+            .pipe(reload({stream: true}));
+    });
+
     gulp.task('build:js', function () {
         var jsStream = gulp.src(path.src.js)
             .pipe(rigger());
@@ -117,7 +125,7 @@
                 templateHeader: templateHeader
             }));
 
-        return merge2(jsStream, tplStream)
+        return jsStream // merge2(jsStream, tplStream)
             //.pipe(sourcemaps.init())
             .pipe(concat('b.js'))
             .pipe(ngAnnotate())
@@ -143,7 +151,7 @@
             }) : gutil.noop())
             //.pipe(sourcemaps.write())
             .pipe(gulp.dest(path.build.base))
-            .pipe(reload({stream: true}));
+            .pipe(reload({stream: true}));;
     });
 
     gulp.task('build:image', function () {
