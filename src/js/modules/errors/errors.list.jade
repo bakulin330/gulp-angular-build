@@ -49,6 +49,7 @@ div.main-content
         table.error-list
             thead
                 tr.error-list__header-item
+                    th.error-list__header-cell.error-list__header-new-indicator
                     th.error-list__header-cell Message
                     th.error-list__header-cell Last seen
                     th.error-list__header-cell.error-list__header-cell_right Count
@@ -56,7 +57,9 @@ div.main-content
                     th.error-list__header-cell
                     th.error-list__header-cell
             tbody
-                tr.error-list__item
+                tr.error-list__item.error-list__item-new
+                    td.error-list__cell.error-list__new-indicator
+                        span
                     td.error-list__cell.error-list__item-name
                         a Название ошибки 111
                     td.error-list__cell.error-list__item-last-seen 29 авг, 11:33
@@ -65,10 +68,12 @@ div.main-content
                     td.error-list__cell chart
                     td.error-list__cell ...
                 tr.error-list__item
+                    td.error-list__cell.error-list__new-indicator
+                        span
                     td.error-list__cell.error-list__item-name
                         a Название ошибки 111
                     td.error-list__cell.error-list__item-last-seen 29 авг, 11:33
-                    td.error-list__cell.error-list__cell_right 321
+                    td.error-list__cell.error-list__cell_right.error-list__counter-updated 321
                     td.error-list__cell.error-list__cell_right 11
                     td.error-list__cell chart
                     td.error-list__cell ...

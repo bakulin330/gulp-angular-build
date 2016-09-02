@@ -181,7 +181,7 @@ $error-tab-counter-height: 2*$step;
     background: #fff;
     min-height: 200px;
     border: 1px solid $color-dark-smoke;
-    padding: 2*$step 0;
+    padding: 3*$step 0;
     @include border-bottom-radius($base-border-radius);
 }
 
@@ -197,6 +197,28 @@ $error-tab-counter-height: 2*$step;
     vertical-align: middle;
     &:hover {
         background: rgba(250, 242, 204, 0.6);
+    }
+}
+
+.error-list__header-new-indicator {
+    width: 1*$step;
+}
+
+.error-list__new-indicator span {
+    display: block;
+    width: $step;
+    height: $step;
+    @include border-radius($step/2);
+    background: $color-default;
+    visibility: hidden;
+    margin: 0 auto;
+}
+
+.error-list__item-new {
+    background: rgba(54, 174, 255, 0.1);
+
+    .error-list__new-indicator span {
+        visibility: visible;
     }
 }
 
@@ -223,11 +245,11 @@ $error-tab-counter-height: 2*$step;
 
 .error-list__cell, .error-list__header-cell {
     &:first-child {
-        padding-left: 2*$step;
+        padding-left: 1*$step;
     }
 
     &:last-child {
-        padding-right: 2*$step;
+        padding-right: 3*$step;
     }
 }
 
@@ -236,4 +258,21 @@ $error-tab-counter-height: 2*$step;
 
 .error-list__item-last-seen {
     white-space: nowrap;
+}
+
+.error-list__counter-updated {
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: '';
+        display: block;
+        width: $step;
+        height: $step;
+        @include border-radius($step/2);
+        background: $color-negative;
+        right: -5px;
+        top: 50%;
+        margin-top: -($step/2);
+    }
 }
