@@ -11,8 +11,18 @@ body {
     left: 0;
     right: 0;
     height: $top-menu-height;
-    background: $color-black;
+    background: #0e1c2a;
     @include clearfix;
+}
+
+.main-menu__logo {
+    float: left;
+    background: $color-slate;
+    width: 3*$step;
+    height: 3*$step;
+    margin: ($top-menu-height - 3*$step)/2;
+    margin-bottom: 0;
+    @include border-radius(50px);
 }
 
 .main-menu__item {
@@ -28,6 +38,10 @@ body {
     }
 }
 
+.main-menu__item_right {
+    float: right;
+}
+
 .main-left-panel {
     position: fixed;
     top: $top-menu-height;
@@ -37,15 +51,34 @@ body {
     background: $color-slate;
 }
 
+.main-left-panel__project-name {
+    color: #fff;
+    font-weight: bold;
+    @extend .font-l;
+    padding: 2*$step;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .main-left-panel__item {
     height: $top-menu-height;
     line-height: $top-menu-height;
     color: #fff;
-    padding: 0 2*$step;
+    padding: 0 2*$step 0 2*$step - 4;
     cursor: pointer;
+    border-left: 4px solid transparent;
+    color: $color-smoke;
 
     &.main-left-panel__item-active {
-        border-left: 2px solid $color-default;
+        background: $color-black;
+    }
+
+    &.main-left-panel__item-active, &:hover {
+        border-left: 4px solid $color-default;
+    }
+
+    &:hover {
+        color: #fff;
     }
 }
 
@@ -54,29 +87,90 @@ body {
     padding: 5*$step;
 }
 
-.error-tabs {
-    margin-top: 2*$step;
+.last-update-time {
+    color: $color-dark-smoke;
+    margin-top: 0;
+}
+
+.error-list__controls-panel {
     @include clearfix;
+    border-top: 2px solid $color-smoke;
+    margin-top: 1*$step;
+    padding-top: 1*$step;
+}
+
+$error-tab-height: 4*$step + 1;
+$error-tab-line: 2px;
+$error-tab-counter-height: 2*$step;
+.error-tabs {
+    margin-top: 4*$step;
+    @include clearfix;
+    height: $error-tab-height;
 }
 
 .error-tabs__item {
     float: left;
-    height: 4*$step;
-    line-height: 4*$step;
+    height: $error-tab-height - 1;
+    line-height: $error-tab-height - 1;
     background: $color-dark-snow;
-    padding: 0 2*$step;
+//    padding: 0 2*$step;
     width: 200px;
     text-align: center;
     border-top: 1px solid $color-dark-smoke;
     border-right: 1px solid $color-dark-smoke;
-    margin-top: 2px;
     box-sizing: content-box;
+    cursor: pointer;
+    position: relative;
+
+    span {
+        display: block;
+        height: 100%;
+        line-height: $error-tab-height - 1 - $error-tab-line;
+    }
+
+    &:first-child {
+        @include border-top-left-radius($base-border-radius);
+    }
+
+    &:last-child {
+        @include border-top-right-radius($base-border-radius);
+    }
 }
 
-.error-tabs__item-active {
-    border-top: 3px solid $color-default;
-    margin-top: 0;
+.error-tabs__item-line {
+    height: $error-tab-line;
+    background: transparent;
+}
+
+.error-tabs__item-counter {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    background: $color-dark-smoke;
+    padding: 0 6px;
+    margin-top: -($error-tab-counter-height/2);
+    height: $error-tab-counter-height;
+    line-height: $error-tab-counter-height;
+    @extend .font-s;
+    @include border-radius($base-border-radius);
+    color: $color-slate;
+}
+
+.error-tabs__item:hover .error-tabs__item-line {
+    background: $color-dark-smoke;
+}
+
+.error-tabs__item-active, .error-tabs__item-active:hover {
+//    border-top: 3px solid $color-default;
+//    margin-top: 0;
     background: #fff;
+    border-top: 0;
+    height: $error-tab-height + 1;
+
+    .error-tabs__item-line {
+        height: 3px;
+        background: $color-default;
+    }
 }
 
 .error-tabs__item:first-child {
@@ -87,29 +181,56 @@ body {
     background: #fff;
     min-height: 200px;
     border: 1px solid $color-dark-smoke;
-    border-top: 0;
-    padding: 2*$step;
+    padding: 2*$step 0;
+    @include border-bottom-radius($base-border-radius);
 }
 
 .error-list {
-//    @extend .table;
+    width: 100%;
+}
+
+.error-list__item, .error-list__header-item {
+    border-bottom: 1px solid $color-smoke;
 }
 
 .error-list__item {
-    @include clearfix;
+    &:hover {
+        background: rgba(250, 242, 204, 0.6);
+    }
 }
 
 .error-list__cell {
-//    @extend .t-cell;
-//    float: right;
-//    margin-left: 2*$step;
+    height: 4*$step;
+    padding-right: 1*$step;
 }
 
-.error-list__item-name {
+.error-list__cell_right {
+    text-align: right;
+}
+
+.error-list__header-cell {
+    text-align: left;
     white-space: nowrap;
-    text-overflow: ellipsis;
-//    overflow: hidden;
-//    float: left;
+    padding-right: 1*$step;
+    @extend .font-s;
+    padding-bottom: 1*$step;
+}
+
+.error-list__header-cell_right {
+    text-align: right;
+}
+
+.error-list__cell, .error-list__header-cell {
+    &:first-child {
+        padding-left: 2*$step;
+    }
+
+    &:last-child {
+        padding-right: 2*$step;
+    }
+}
+
+.error-list__item-name a {
 }
 
 .error-list__item-last-seen {

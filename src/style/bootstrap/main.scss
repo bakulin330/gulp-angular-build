@@ -12,6 +12,7 @@ body {
     margin: 0;
     padding: 0;
     background: #fff;
+    overflow-y: scroll;
 }
 
 #nocss {
@@ -36,4 +37,16 @@ body {
 
 .mt3 {
     margin-top: 3*$step;
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+.l-float {
+    float: left;
+}
+
+.r-float {
+    float: right;
 }

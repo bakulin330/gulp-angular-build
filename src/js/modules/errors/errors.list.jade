@@ -1,26 +1,75 @@
 div.main-menu
-    div.main-menu__item Projects
-    div.main-menu__item Project 1
+    div.main-menu__logo
+    div.main-menu__item Projects list
+    div.main-menu__item.main-menu__item_right Account
 
 div.main-left-panel
+    div.main-left-panel__project-name Project 1
     div.main-left-panel__item.main-left-panel__item-active Errors list
     div.main-left-panel__item Deployments
     div.main-left-panel__item Project settings
 
 div.main-content
-    div.font-xl Errors list
+    div.table
+        div.t-row
+            div.t-cell
+                div.font-xxl Errors list
+            div.t-cell.r-align
+                div.last-update-time updated 29 aug, 11:33
 
+    //
+    div.error-list__controls-panel
+        div.l-float
+            input.input-s(placeholder="29.08.2016 - 02.09.2016")
+
+        div.r-float(style="margin-left:30px")
+            input.input-s(placeholder="Search")
+        div.r-float(style="margin-left:10px")
+            select
+                option Sort by Count
+                option Sort by Last seen
+
+    // табы с типами ошибок
     div.error-tabs
-        div.error-tabs__item.error-tabs__item-active Active
-        div.error-tabs__item Resolved
-        div.error-tabs__item Ignored
+        div.error-tabs__item
+            div.error-tabs__item-line
+            div.error-tabs__item-counter 0
+            span Active
+        div.error-tabs__item.error-tabs__item-active
+            div.error-tabs__item-line
+            div.error-tabs__item-counter 12
+            span Resolved
+        div.error-tabs__item
+            div.error-tabs__item-line
+            div.error-tabs__item-counter 2
+            span Ignored
 
+    // список ошибок
     div.error-list__wrap
         table.error-list
-            tr.error-list__item
-                td.error-list__cell.error-list__item-name Название ошибки 111
-                td.error-list__cell ...
-                td.error-list__cell chart
-                td.error-list__cell 11
-                td.error-list__cell 321
-                td.error-list__cell.error-list__item-last-seen 29 авг, 11:33
+            thead
+                tr.error-list__header-item
+                    th.error-list__header-cell Message
+                    th.error-list__header-cell Last seen
+                    th.error-list__header-cell.error-list__header-cell_right Count
+                    th.error-list__header-cell.error-list__header-cell_right Users
+                    th.error-list__header-cell
+                    th.error-list__header-cell
+            tbody
+                tr.error-list__item
+                    td.error-list__cell.error-list__item-name
+                        a Название ошибки 111
+                    td.error-list__cell.error-list__item-last-seen 29 авг, 11:33
+                    td.error-list__cell.error-list__cell_right 321
+                    td.error-list__cell.error-list__cell_right 11
+                    td.error-list__cell chart
+                    td.error-list__cell ...
+                tr.error-list__item
+                    td.error-list__cell.error-list__item-name
+                        a Название ошибки 111
+                    td.error-list__cell.error-list__item-last-seen 29 авг, 11:33
+                    td.error-list__cell.error-list__cell_right 321
+                    td.error-list__cell.error-list__cell_right 11
+                    td.error-list__cell chart
+                    td.error-list__cell ...
+
