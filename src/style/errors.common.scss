@@ -207,7 +207,6 @@ $error-tab-counter-height: 2*$step;
 }
 
 .error-list__cell {
-    height: 4*$step;
     padding: (1*$step) (3*$step) (1*$step) 0;
 }
 
@@ -242,6 +241,11 @@ $error-tab-counter-height: 2*$step;
     padding-right: 3*$step;
     @extend .font-s;
     padding-bottom: 1*$step;
+
+    &:first-child {
+        padding: 0;
+        width: 30px;
+    }
 }
 
 .error-list__header-cell_right {
@@ -336,4 +340,13 @@ $error-tab-counter-height: 2*$step;
 
 .error-list__item-controls {
     width: 1%;
+}
+
+.error-list__item-dropdown {
+    width: 20px;
+    height: 20px;
+    background: $color-dark-snow;
+    @include border-radius(10px);
+    text-align: center;
+    cursor: pointer;
 }
