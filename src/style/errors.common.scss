@@ -18,9 +18,9 @@ body {
 .main-menu__logo {
     float: left;
     background: $color-slate;
-    width: 3*$step;
-    height: 3*$step;
-    margin: ($top-menu-height - 3*$step)/2;
+    width: 26px;
+    height: 26px;
+    margin: ($top-menu-height - 26)/2;
     margin-bottom: 0;
     @include border-radius(50px);
 }
