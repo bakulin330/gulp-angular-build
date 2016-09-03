@@ -196,7 +196,7 @@ $error-tab-counter-height: 2*$step;
 .error-list__item {
     vertical-align: middle;
     &:hover {
-        background: rgba(250, 242, 204, 0.6);
+        background: rgba(250, 242, 204, 0.2);
     }
 }
 
@@ -204,14 +204,26 @@ $error-tab-counter-height: 2*$step;
     width: 1*$step;
 }
 
-.error-list__new-indicator span {
-    display: block;
-    width: $step;
-    height: $step;
-    @include border-radius($step/2);
-    background: $color-default;
-    visibility: hidden;
-    margin: 0 auto;
+.error-list__cell {
+    height: 4*$step;
+    padding: (1*$step) (3*$step) (1*$step) 0;
+}
+
+.error-list__cell_right {
+    text-align: right;
+}
+
+.error-list__new-indicator {
+    padding: 0 (1*$step) 0 (2*$step);
+    span {
+        display: block;
+        width: $step;
+        height: $step;
+        @include border-radius($step/2);
+        background: $color-default;
+        visibility: hidden;
+        margin: 0 auto;
+    }
 }
 
 .error-list__item-new {
@@ -222,25 +234,48 @@ $error-tab-counter-height: 2*$step;
     }
 }
 
-.error-list__cell {
-    height: 4*$step;
-    padding-right: 1*$step;
-}
-
-.error-list__cell_right {
-    text-align: right;
-}
-
 .error-list__header-cell {
     text-align: left;
     white-space: nowrap;
-    padding-right: 1*$step;
+    padding-right: 3*$step;
     @extend .font-s;
     padding-bottom: 1*$step;
 }
 
 .error-list__header-cell_right {
     text-align: right;
+}
+
+.error-list__header-cell-sortable {
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.error-list__sort_asc,
+.error-list__sort_desc {
+    span {
+        position: relative;
+
+        &:after {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            right: -16px;
+            top: 50%;
+            margin-top: -3px;
+        }
+    }
+}
+
+.error-list__sort_asc span:after {
+    @include angle-up(6px, 6px, $color-default);
+}
+.error-list__sort_desc span:after {
+    @include angle-down(6px, 6px, $color-default);
 }
 
 .error-list__cell, .error-list__header-cell {
@@ -254,10 +289,12 @@ $error-tab-counter-height: 2*$step;
 }
 
 .error-list__item-name a {
+    line-height: 1.5;
 }
 
 .error-list__item-last-seen {
     white-space: nowrap;
+    width: 1%;
 }
 
 .error-list__counter-updated {
@@ -267,12 +304,34 @@ $error-tab-counter-height: 2*$step;
         position: absolute;
         content: '';
         display: block;
-        width: $step;
-        height: $step;
-        @include border-radius($step/2);
+        width: 6px;
+        height: 6px;
+        margin-top: -3px;
+        @include border-radius(3px);
         background: $color-negative;
-        right: -5px;
+        right: 20px;
         top: 50%;
-        margin-top: -($step/2);
     }
+}
+
+//.error-list__item-err-count {
+//    width: 1%;
+//}
+//
+//.error-list__item-usr-count {
+//    width: 1%;
+//}
+//
+.error-list__item-chart {
+    width: 1%;
+}
+
+.error-chart {
+    width: 120px;
+    height: 30px;
+    background: $color-smoke;
+}
+
+.error-list__item-controls {
+    width: 1%;
 }

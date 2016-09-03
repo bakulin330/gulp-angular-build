@@ -125,3 +125,12 @@
     border-top: 0;
     border-bottom: $main solid $color;
 }
+
+@mixin angle-down($sides, $main, $color) {
+    width: 0;
+    height: 0;
+    border-left: $sides solid transparent;
+    border-right: $sides solid transparent;
+    border-top: $main solid $color;
+    border-botton: 0;
+}
