@@ -103,18 +103,17 @@ body {
 $error-tab-height: 4*$step + 1;
 $error-tab-line: 2px;
 $error-tab-counter-height: 2*$step;
-.error-tabs {
-    margin-top: 4*$step;
-    @include clearfix;
-    height: $error-tab-height;
+
+$tabs-height: 4*$step + 1;
+.ui-tabs {
+    height: $tabs-height;
 }
 
-.error-tabs__item {
+.ui-tabs__item {
     float: left;
     height: $error-tab-height - 1;
     line-height: $error-tab-height - 1;
     background: $color-dark-snow;
-//    padding: 0 2*$step;
     width: 200px;
     text-align: center;
     border-top: 1px solid $color-dark-smoke;
@@ -139,12 +138,12 @@ $error-tab-counter-height: 2*$step;
     }
 }
 
-.error-tabs__item-line {
+.ui-tabs__item-line {
     height: $error-tab-line;
     background: transparent;
 }
 
-.error-tabs__item-counter {
+.ui-tabs__item-counter {
     position: absolute;
     top: 50%;
     right: 10px;
@@ -158,33 +157,41 @@ $error-tab-counter-height: 2*$step;
     color: $color-slate;
 }
 
-.error-tabs__item:hover .error-tabs__item-line {
+.ui-tabs__item:hover .ui-tabs__item-line {
     background: $color-dark-smoke;
 }
 
-.error-tabs__item-active, .error-tabs__item-active:hover {
-//    border-top: 3px solid $color-default;
-//    margin-top: 0;
+.ui-tabs__item-active, .ui-tabs__item-active:hover {
+    //    border-top: 3px solid $color-default;
+    //    margin-top: 0;
     background: #fff;
     border-top: 0;
     height: $error-tab-height + 1;
 
-    .error-tabs__item-line {
+    .ui-tabs__item-line {
         height: 3px;
         background: $color-default;
     }
 }
 
-.error-tabs__item:first-child {
+.ui-tabs__item:first-child {
     border-left: 1px solid $color-dark-smoke;
 }
 
-.error-list__wrap {
+.ui-tabs__content {
     background: #fff;
     min-height: 200px;
     border: 1px solid $color-dark-smoke;
     padding: 3*$step 0;
     @include border-bottom-radius($base-border-radius);
+}
+
+
+
+.error-tabs {
+    margin-top: 4*$step;
+    @include clearfix;
+    @extend .ui-tabs;
 }
 
 .error-list {
