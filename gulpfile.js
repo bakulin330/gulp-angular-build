@@ -21,6 +21,7 @@
         jade = require("gulp-jade"),
         rigger = require("gulp-rigger"),
         debug = require("gulp-debug"),
+        str2base64 = require("gulp-lpm-scss-str2base64"),
         browserSync = require("browser-sync"),
         rimraf = require("rimraf"),
         merge2 = require('merge2'),
@@ -142,7 +143,7 @@
             .pipe(sass({style: 'compressed'}).on('error', notify.onError(function (error) {
                 return 'Error: ' + error.message;
             })))
-            //.pipe(plugins.str2base64())
+            .pipe(str2base64())
             .pipe(concatCss('a.css'))
             .pipe(prefixer({browsers: ['> 1%', 'last 4 versions', 'IE 7']}))
             .pipe(prod || minify ? csso({

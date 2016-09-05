@@ -1,14 +1,12 @@
-$base-font-size: 14px;
-$base-font-family: "Open Sans", Helvetica Neue, Arial, Helvetica, sans-serif;
-$base-line-height: 1;
 $font-m: $base-font-size;
 
 // --------------
-$font-xxl: round($base-font-size * 1.8);
-$font-xl: round($base-font-size * 1.5);
-$font-l: round($base-font-size * 1.22);
-$font-s: round($base-font-size * 0.78);
-$font-xs: round($base-font-size * 0.56);
+$font-l: percentage($multiplier);
+$font-xl: percentage($multiplier * $multiplier);
+$font-xxl: percentage($multiplier * $multiplier * $multiplier);
+
+$font-s: percentage(1 / $multiplier);
+$font-xs: percentage(1 / $multiplier / $multiplier);
 // --------------
 
 body {
