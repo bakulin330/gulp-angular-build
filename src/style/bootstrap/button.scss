@@ -1,7 +1,7 @@
 $base-button-height: 4*$step;
 $base-button-padding: ($base-button-height / 2);
 $base-btn-shadow: 2px;
-$btn-base-box-shadow: inset 0 -2px 0 rgba(31,45,61,0.3), 0 1px 4px rgba(0,0,0,.2);
+$btn-base-box-shadow: inset 0 -2px 0 rgba(31,45,61,0.3), 0 1px 2px rgba(0,0,0,.2);
 $btn-ghost-box-shadow: $color-dark-smoke 0px 0px 0px 1px inset;
 
 button::-moz-focus-inner, input[type=submit]::-moz-focus-inner, input[type=button]::-moz-focus-inner {
