@@ -3,7 +3,7 @@ div(ng-bind="home.test")
 div
     a(ui-sref="errors-list") List
 
-div(style="width:800px; margin:0 auto;")
+div(style="width:850px; margin:0 auto;")
     div.table
         div.t-row
             div.t-cell
@@ -11,27 +11,33 @@ div(style="width:800px; margin:0 auto;")
 
     div(style="margin-top:30px")
         div.font-card
-            div.font-xxl The quick brown fox jumps over the lazy dog
+            div.font-xxl Съешь ещё этих мягких французских булок, да выпей чаю
+            div.font-xxl.mt1 The quick brown fox jumps over the lazy dog
             div.font-s.color-silver.mt1 XXL
 
         div.font-card
-            div.font-xl The quick brown fox jumps over the lazy dog
+            div.font-xl Съешь ещё этих мягких французских булок, да выпей чаю
+            div.font-xl.mt1 The quick brown fox jumps over the lazy dog
             div.font-s.color-silver.mt1 XL
 
         div.font-card
-            div.font-l The quick brown fox jumps over the lazy dog
+            div.font-l Съешь ещё этих мягких французских булок, да выпей чаю
+            div.font-l.mt1 The quick brown fox jumps over the lazy dog
             div.font-s.color-silver.mt1 L
 
         div.font-card
-            div.font-m The quick brown fox jumps over the lazy dog
+            div.font-m Съешь ещё этих мягких французских булок, да выпей чаю
+            div.font-m.mt1 The quick brown fox jumps over the lazy dog
             div.font-s.color-silver.mt1 M
 
         div.font-card
-            div.font-s The quick brown fox jumps over the lazy dog
+            div.font-s Съешь ещё этих мягких французских булок, да выпей чаю
+            div.font-s.mt1 The quick brown fox jumps over the lazy dog
             div.font-s.color-silver.mt1 S
 
         div.font-card
-            div.font-xs The quick brown fox jumps over the lazy dog
+            div.font-xs Съешь ещё этих мягких французских булок, да выпей чаю
+            div.font-xs.mt1 The quick brown fox jumps over the lazy dog
             div.font-s.color-silver.mt1 XS
 
 
@@ -76,7 +82,9 @@ div(style="width:800px; margin:0 auto;")
         button.btn-m.btn-disabled.ml2 Disabled
         button.btn-m.btn-loading.ml2 Loading
 
-    div.mt3
+    div.font-xxl.mt3 Text input
+
+    div.mt1
         div.table
             div.t-row
                 div.t-cell
@@ -116,31 +124,68 @@ div(style="width:800px; margin:0 auto;")
                 div.t-cell.pl1
                     button.btn-xl.bg-default.btn-disabled Disabled
 
-    div.mt3
-        textarea.textarea-s(rows="2")
-            | some text
-            | etxt
+    div.font-xxl.mt3 Textarea
+
+    div.mt1
+        div.table.w-full
+            div.t-row
+                div.t-cell
+                    textarea.textarea-s(rows="2")
+                        | some text
+                        | etxt
+                div.t-cell.pl1
+                    textarea.textarea-m(rows="2")
+                        | some text
+                        | etxt
+                div.t-cell.pl1
+                    textarea.textarea-l(rows="2")
+                        | some text
+                        | etxt
+                div.t-cell.pl1
+                    textarea.textarea-xl(rows="2")
+                        | some text
+                        | etxt
+
+            div.t-row
+                div.t-cell S
+                div.t-cell M
+                div.t-cell L
+                div.t-cell XL
+
 
         textarea.textarea-s.mt1.textarea-disabled(rows="2")
             | some text
             | etxt
 
-        textarea.textarea-m.mt1(rows="2")
-            | some text
-            | etxt
 
-        textarea.textarea-l.mt1(rows="2")
-            | some text
-            | etxt
 
-        textarea.textarea-xl.mt1(rows="2")
-            | some text
-            | etxt
 
-    div.mt3
-        div Some <a>text and</a> link.
-        div Some <a class="link-dark">text and</a> link.
-        div Some <a class="link-light">text and</a> link.
-        div Some <a class="link-negative">text and</a> link.
+
+
+    div.font-xxl.mt3 Link
+
+    div.mt1
+        div Some #[a text and] link.
+        div Some #[a(class="link-dark") text and] link.
+        div Some #[a(class="link-light") text and] link.
+        div Some #[a(class="link-negative") negative] link.
 
     div.mt3
+        div
+            label.checkbox
+                input(type="checkbox")
+                span.control-indicator
+                span Checkbox text
+
+        div.mt1
+            label.radio
+                input(type="radio" name="foo1")
+                span.control-indicator
+                span Checkbox text
+
+            label.radio
+                input(type="radio" name="foo1")
+                span.control-indicator
+                span Checkbox text
+
+    div.mt3 .
