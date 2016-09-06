@@ -14,7 +14,17 @@ table {
 
 .t-cell {
     display: table-cell;
+    vertical-align: top;
 }
+
+.table_vert-align-mid .t-cell {
+    vertical-align: middle;
+}
+
+.table_vert-align-bot .t-cell {
+    vertical-align: bottom;
+}
+
 
 .table_cell-center .t-cell {
     text-align: center;

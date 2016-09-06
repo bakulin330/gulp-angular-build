@@ -1,9 +1,10 @@
 $base-input-height: 4*$step;
 $base-input-padding: 10px;
 $input-padding-miltiplier: 0.35;
+$textarea-multiplier: 1.5;
 
 .base-input {
-    box-shadow: inset 0 0 0 1px $color-smoke;
+//    box-shadow: inset 0 0 0 1px $color-smoke;
     color: $color-slate;
     border: 0;
     @include border-radius($base-border-radius);
@@ -13,54 +14,103 @@ $input-padding-miltiplier: 0.35;
     transition: all 80ms linear;
     vertical-align: middle;
     -webkit-font-smoothing: antialiased;
-    cursor: text;
     line-height: 1;
+    border: 1px solid $color-smoke;
+    width: 100%;
+    font-family: $base-font-family;
 
     &:hover {
-        box-shadow: inset 0 0 0 1px $color-extra-dark-smoke;
+        border: 1px solid $color-extra-dark-smoke;
     }
 
     &:focus {
-        box-shadow: inset 0 0 0 1px $color-default;
+        border: 1px solid $color-default;
     }
 }
 
+//-------------
+
+$input-m-padding: round($base-input-height * $input-padding-miltiplier);
 .input-m {
     @extend .base-input;
     font-size: $font-m;
     height: $base-input-height;
-    padding: 0 round($base-input-height * $input-padding-miltiplier);
+    padding: 0 $input-m-padding;
 }
 
+.textarea-m {
+    @extend .base-input;
+    font-size: $font-m;
+    padding: ($input-m-padding/$textarea-multiplier) $input-m-padding;
+    line-height: $textarea-multiplier;
+}
+
+//-------------
+
 $input-s-height: round(($base-input-height / $btn-multiplier)/2)*2;
+$input-s-padding: round($input-s-height * $input-padding-miltiplier);
 .input-s {
     @extend .base-input;
     font-size: $font-s;
     height: $input-s-height;
-    padding: 0 round($input-s-height * $input-padding-miltiplier);
+    padding: 0 $input-s-padding;
 }
 
+.textarea-s {
+    @extend .base-input;
+    font-size: $font-s;
+    padding: ($input-s-padding/$textarea-multiplier) $input-s-padding;
+    line-height: $textarea-multiplier;
+}
+
+//-------------
+
 $input-l-height: round(($base-input-height * $btn-multiplier)/2)*2;
+$input-l-padding: round($input-l-height * $input-padding-miltiplier);
 .input-l {
     @extend .base-input;
     font-size: $font-l;
     height: $input-l-height;
-    padding: 0 round($input-l-height * $input-padding-miltiplier);
+    padding: 0 $input-l-padding;
 }
 
+.textarea-l {
+    @extend .base-input;
+    font-size: $font-l;
+    padding: ($input-l-padding/$textarea-multiplier) $input-l-padding;
+    line-height: $textarea-multiplier;
+}
+
+//-------------
+
 $input-xl-height: round(($base-input-height * $btn-multiplier * $btn-multiplier)/2)*2;
+$input-xl-padding: round($input-xl-height * $input-padding-miltiplier);
 .input-xl {
     @extend .base-input;
     font-size: $font-xl;
     height: $input-xl-height;
-    padding: 0 round($input-xl-height * $input-padding-miltiplier);
+    padding: 0 $input-xl-padding;
 }
+
+.textarea-xl {
+    @extend .base-input;
+    font-size: $font-xl;
+    padding: ($input-xl-padding/$textarea-multiplier) $input-xl-padding;
+    line-height: $textarea-multiplier;
+}
+
+//-------------
 
 .input-disabled {
     color: $color-silver;
-    box-shadow: inset 0 0 0 1px $color-smoke;
+    border: 1px solid $color-dark-smoke;
     background-color: $color-snow;
     pointer-events: none;
     cursor: default;
     @include no-select;
+}
+
+.textarea-disabled {
+    @extend .input-disabled;
+    resize: none;
 }

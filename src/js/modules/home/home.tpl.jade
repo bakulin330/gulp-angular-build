@@ -81,7 +81,7 @@ div(style="width:800px; margin:0 auto;")
             div.t-row
                 div.t-cell
                     input.input-s(placeholder="Плейсхолдер")
-                div.t-cell
+                div.t-cell.pl1
                     button.btn-s.bg-default Default
 
     div.mt3
@@ -89,7 +89,7 @@ div(style="width:800px; margin:0 auto;")
             div.t-row
                 div.t-cell
                     input.input-m(placeholder="Плейсхолдер")
-                div.t-cell
+                div.t-cell.pl1
                     button.btn-m.bg-default Default
 
     div.mt3
@@ -97,7 +97,7 @@ div(style="width:800px; margin:0 auto;")
             div.t-row
                 div.t-cell
                     input.input-l(placeholder="Плейсхолдер")
-                div.t-cell
+                div.t-cell.pl1
                     button.btn-l.bg-default Default
 
     div.mt3
@@ -105,12 +105,37 @@ div(style="width:800px; margin:0 auto;")
             div.t-row
                 div.t-cell
                     input.input-xl(placeholder="Плейсхолдер")
-                div.t-cell
+                div.t-cell.pl1
                     button.btn-xl.bg-default Default
 
     div.mt3
-        input.input-xl.input-disabled(placeholder="Disabled input")
-        button.btn-xl.btn-disabled.bg-default Disabled
+        div.table
+            div.t-row
+                div.t-cell
+                    input.input-xl.input-disabled(value="Disabled input")
+                div.t-cell.pl1
+                    button.btn-xl.bg-default.btn-disabled Disabled
+
+    div.mt3
+        textarea.textarea-s(rows="2")
+            | some text
+            | etxt
+
+        textarea.textarea-s.mt1.textarea-disabled(rows="2")
+            | some text
+            | etxt
+
+        textarea.textarea-m.mt1(rows="2")
+            | some text
+            | etxt
+
+        textarea.textarea-l.mt1(rows="2")
+            | some text
+            | etxt
+
+        textarea.textarea-xl.mt1(rows="2")
+            | some text
+            | etxt
 
     div.mt3
         div Some <a>text and</a> link.

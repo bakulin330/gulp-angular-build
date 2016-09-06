@@ -1,0 +1,36 @@
+.mha {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mt1 {
+    margin-top: $step;
+}
+
+.pt1 {
+    padding-top: $step;
+}
+
+.mt2 {
+    margin-top: 2*$step;
+}
+
+.mt3 {
+    margin-top: 3*$step;
+}
+
+.ml1 {
+    margin-left: $step;
+}
+
+.pl1 {
+    padding-left: $step;
+}
+
+.ml2 {
+    margin-left: (2 * $step);
+}
+
+.pl2 {
+    padding-left: (2 * $step);
+}
